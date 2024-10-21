@@ -24,8 +24,8 @@ public class Inicio {
 	public static void main(String[] args) {
 		
 		//Variables
-		String entrada, otraVez;
-		double nota, promedio, masAlta = 0, masBaja = 0, contador = 0, sumaNotas = 0;
+		String entrada = "", otraVez;
+		double nota = 0, promedio = 0, masAlta = 0, masBaja = 0, contador = 0, sumaNotas = 0;
 		boolean seguir = false, respuesta = false;
 		
 		//Variable Scanner
@@ -36,31 +36,7 @@ public class Inicio {
 		
 		do {
 			oi.muestraTitulo();
-			do {
-				System.out.println("Introduce una calificación (o escribe \"fin\" para terminar):");
-				entrada = sc.next();
-				if(entrada.equals("fin")) {
-					seguir = true;
-				}else {
-					nota = Double.parseDouble(entrada);
-					contador++;
-					sumaNotas = sumaNotas + nota;
-					
-					masBaja = nota;
-		            if (nota > masAlta) {
-		            	masAlta = nota;
-		            }else if(nota < masBaja) {
-		            	masBaja = nota;
-		            }
-				}
-			}while(!seguir);
-			
-			System.out.println("Resumen: ");
-			promedio = sumaNotas / contador;
-			System.out.println("Promedio: " + promedio);
-			System.out.println("Calificación más alta: " + masAlta);
-			System.out.println("Calificación más baja: " + masBaja);
-			
+			oi.pideNumeros(entrada, nota, promedio, masAlta, masBaja, contador, sumaNotas, seguir);
 			System.out.println();
 			System.out.println("¿Quieres calcular otra vez? (S/N):");
 			otraVez = sc.next();

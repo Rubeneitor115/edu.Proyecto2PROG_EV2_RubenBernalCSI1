@@ -16,4 +16,5 @@ public interface OperativaInterfaz {
 	 * rbr - 201024
 	 */
 	public void muestraTitulo();
+	public void pideNumeros(String entrada, double nota, double promedio, double masAlta, double masBaja, double contador, double sumaNotas, boolean seguir);
 }
